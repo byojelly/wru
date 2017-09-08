@@ -1,3 +1,3 @@
-class WRU::Match
+class Wru::Match
 
 end

@@ -5,5 +5,6 @@ require "bundler/setup"
 require "wru.rb"
 #above sets up a load dependency which requires a specific file
 
-WRU::CLI.new.call
+Wru::CLI.new.call
+
 #above this is assuming we have a CLI class written under DailyDeal, then operating the call method

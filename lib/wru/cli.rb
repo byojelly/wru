@@ -1,8 +1,10 @@
 #this is our cli controller - responsible for user interactions in the bin folder daily--deal
 
-Class WRU::CLI
+Class Wru::CLI
     def call
-        puts "program working"
+        list_matches
     end
-
+    def list_matches
+      puts "These are matches"      
+    end
 end

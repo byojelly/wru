@@ -1,0 +1,63 @@
+THIS FILE WAS CREATED ALONG WITH THE daily--deal WALK THROUGH LAB TO PREPARE FOR THIS LAB
+
+
+In terminal type
+bundle gem name_of_project
+this will create the folder structure you want
+
+You want to start your programming with a shell of what the cli should do (with out the smarts in the background) then you can refine the scraping and advanced methods in the background
+
+
+The Bin exeucatble file needs the below line of code so that the program knows to read the code as ruby
+        #!/usr/bin/env ruby
+
+the bin folder should contain an executable file that the user essentially interracts with
+you can lookup the file permissions of the files in the folder by typing below into editor as long as the terminal is on that folder:
+        ls -lah
+        #more permissions
+        https://support.rackspace.com/how-to/checking-linux-file-permissions-with-ls/
+
+when you review the permissions :
+        r = read
+        w = write
+        x - execuctable
+
+if your executable file does not contain x, then it is more difficult for the user to directly call the program from the cli prompt
+to give executabel permission to the file you must type the following in terminal:
+        chmod +x daily-deal
+        #above daily-deal is the name of the executable file
+        # after the change you can now execute the file by typing the below text directly into terminal:
+            ./bin/daily-deal
+        #this teaches our operating system how to interpeate ruby (using the shabing header line)
+
+setup the bones - methods call, list, menu, goodby
+--------------------------------
+then setup the higher thinking of your code
+-----------
+when running in terminal  ./bin/console for first time after setting up the deal.rb (under lib folder and daily_deal folder) i received the following error
+              Bundler could not find compatible versions for gem "bundler":
+                In Gemfile:
+                  bundler (~> 1.15)
+
+                Current Bundler version:
+                  bundler (1.11.2)
+              This Gemfile requires a different version of Bundler.
+              Perhaps you need to update Bundler by running `gem install bundler`?
+
+              Could not find gem 'bundler (~> 1.15)' in any of the sources
+To fix this i had to open the daily_deal.gemspec file and change
+                spec.add_development_dependency "bundler", "~> 1.15"
+to
+                spec.add_development_dependency "bundler", "~> 1.11.2"
+
+after this change the terminal accepted ./bin/console
+
+----------------------
+at the scraping coding point we had to add additional dependencies in daily_deal.gemspec at bottom
+in addition we have to require 'nokogiri' and require 'pry' in the lib folder daily_deal.rb file to have the dependencies come through
+------
+to fix this error in daily_deal.gemspec
+      The gemspec at /home/alex/code/daily_deal/daily_deal.gemspec is not valid. Please fix this gemspec.
+      The validation error was '"FIXME" or "TODO" is not a description'
+had to update the below summary and description with quoted content
+--------------------

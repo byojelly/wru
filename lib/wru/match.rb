@@ -25,27 +25,23 @@ class Wru::Match
   end
   #take the array and enumerate on each
   def make_matches
-    self.get_matches.each do |event|
         matches = []
-        match = Wru::Match.new
-        binding.pry
-        match.date = event.css(".field_DateAbbrev").text
-        match.time = event.css(".field_TimeLong").text
-        match.comp = event.css(".field_CompStageAbbrev").text
-        match.home = event.css(".field_HomeDisplay").text
-        match.score = event.css(".field_Score").text.delete(", ")
-        match.away = event.css(".field_AwayDisplay").text
-        match.venue = event.css(".field_VenName").text
-        #I am having a difficult time isolating the link url in match.more_info
-        match.more_info = event.css(".field_Links").text
-        matches << match
-
-      end
-
+        self.get_matches.each do |event|
+              match = Wru::Match.new
+              #binding.pry
+              match.date = event.css(".field_DateAbbrev").text
+              match.time = event.css(".field_TimeLong").text
+              match.comp = event.css(".field_CompStageAbbrev").text
+              match.home = event.css(".field_HomeDisplay").text
+              match.score = event.css(".field_Score").text.delete(", ")
+              match.away = event.css(".field_AwayDisplay").text
+              match.venue = event.css(".field_VenName").text
+              #I am having a difficult time isolating the link url in match.more_info
+              match.more_info = event.css(".field_Links").text
+              matches << match
+        end
+        matches
   end
-
-
-
 end
 
 # =>      ./bin/console

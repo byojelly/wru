@@ -9,13 +9,17 @@ class Wru::CLI
       puts <<-DOC.gsub /^\s*/, ''
                 Hello and welcome to the Wales Rugby Union match schedule program.
                 Here is a list of upcoming matches.
-                1. Match WRU vs X
-                2. Match WRU vs X
-                3. Match WRU vs X
-                4. Match WRU vs X
-                5. Match WRU vs X
-                Enter the number of the match would you like to learn more information about.
               DOC
+    #  binding.pry
+      @matches = Wru::Schedule.new.make_matches
+      @matches.each.with_index(1) do |match, i|  #.with_index(1) is a trick to chain with_index(1) allows you to circumvent having to subtract one from the index of an array to yield its position ((arrays start at 0 this allows it to start at 1))
+          puts "#{i}. #{match.date} - #{match.home} v #{match.away}"
+      #@deals.each.with_index(1) do |deal, i|
+      #    puts "#{i}. #{deal.name} - #{deal.price} - #{deal.availability}"
+      end
+
+      puts  "Enter the number of the match would you like to learn more information about."
+
       #in this section lets call a class that extracts match info
 
     end

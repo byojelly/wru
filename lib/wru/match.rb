@@ -2,7 +2,7 @@ class Wru::Match
 
   attr_accessor :date, :time, :comp, :home, :score, :away, :venue, :more_info
   #lets keep track of a class array of all matches
-
+  @@matches = [] #clas variable
 
   def self.upcoming
     puts <<-DOC.gsub /^\s*/, ''
@@ -25,7 +25,7 @@ class Wru::Match
   end
   #take the array and enumerate on each
   def make_matches
-        matches = []
+
         self.get_matches.each do |event|
               match = Wru::Match.new
               #binding.pry
@@ -38,9 +38,12 @@ class Wru::Match
               match.venue = event.css(".field_VenName").text
               #I am having a difficult time isolating the link url in match.more_info
               match.more_info = event.css(".field_Links").text
-              matches << match
+              @@matches << match
         end
-        matches
+        @@matches
+  end
+  def self.matches
+    @@matches
   end
 end
 

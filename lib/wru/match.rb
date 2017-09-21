@@ -1,4 +1,4 @@
-class Wru::Match
+class Wru::Schedule
 
   attr_accessor :date, :time, :comp, :home, :score, :away, :venue, :more_info
   #lets keep track of a class array of all matches
@@ -27,7 +27,7 @@ class Wru::Match
   def make_matches
 
         self.get_matches.each do |event|
-              match = Wru::Match.new
+              match = Wru::Schedule.new
               #binding.pry
               match.date = event.css(".field_DateAbbrev").text
               match.time = event.css(".field_TimeLong").text
@@ -48,4 +48,4 @@ class Wru::Match
 end
 
 # =>      ./bin/console
-#         Wru::Match.new.make_matches
+#         Wru::Schedule.new.make_matches

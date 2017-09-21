@@ -39,4 +39,4 @@ end
 
 
 
-#     ./bin/matches
+#     ./bin/schedule

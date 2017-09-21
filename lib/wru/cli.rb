@@ -27,15 +27,21 @@ class Wru::CLI
         input =nil
         while input != "exit"
               input = gets.strip.downcase #downcase allows any input to be processed in a similar manner
-              case input
-                when "1"
-                  puts "More info for event 1"
-                when "2"
-                  puts "More info for event 2"
-                when "list"
-                  list_matches
-                else
-                  puts "Please review the matches and make a selection from the list. Type exit to leave the system."
+              if input.to_i > 0 #strings convert to 0 value with .to_i
+                        the_match = @matches[input.to_i - 1] #this provides the array index of this match and then puts the object
+                        puts <<-DOC.gsub /^\s*/, ''
+                              Date = #{the_match.date}
+                              Time = #{the_match.time}
+                              Type of Match = #{the_match.comp}
+                              #{the_match.home} (home) against #{the_match.away} (away)
+                              Score = #{the_match.score}
+                              Venue = #{the_match.venue}
+                              Additional Information = #{the_match.more_info}
+                              DOC
+              elsif
+                list_deals
+              else
+                puts "Not sure what you want, type list or exit."
               end
         end
     end

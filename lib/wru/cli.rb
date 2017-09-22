@@ -38,7 +38,7 @@ class Wru::CLI
         while input != "exit"
               input = gets.strip.downcase #downcase allows any input to be processed in a similar manner
               puts #space
-              if input.to_i > 0 #strings convert to 0 value with .to_i
+              if input.to_i > 0 && input.to_i <= @matches.count#strings convert to 0 value with .to_i
 
                         the_match = @matches[input.to_i - 1] #this provides the array index of this match and then puts the object
                         puts <<-DOC.gsub /^\s*/, ''
@@ -57,6 +57,9 @@ class Wru::CLI
               elsif input == "list"
                   match_breakdown
               elsif input.to_i <0
+                puts "Not sure what you were looking for with your last inquiry. Type the corresponding match number to learn more, type list to see the schedule again, or type exit if you would like to stop the program."
+                puts
+              elsif input.to_i > @matches.count
                 puts "Not sure what you were looking for with your last inquiry. Type the corresponding match number to learn more, type list to see the schedule again, or type exit if you would like to stop the program."
                 puts
 

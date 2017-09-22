@@ -2,27 +2,32 @@
 
 class Wru::CLI
     def call
-        list_matches
+        greeting
         schedule
     end
-    def list_matches
+
+    def greeting
       puts <<-DOC.gsub /^\s*/, ''
                 Hello and welcome to the Wales Rugby Union match schedule program.
                 Here is a list of upcoming matches.
               DOC
-    #  binding.pry
+      puts #space line
+      list_matches
+    end
+    def list_matches
       @matches = Wru::Schedule.new.make_matches
       @matches.each.with_index(1) do |match, i|  #.with_index(1) is a trick to chain with_index(1) allows you to circumvent having to subtract one from the index of an array to yield its position ((arrays start at 0 this allows it to start at 1))
           puts "##{i}. #{match.date} - #{match.home} v #{match.away}"
       #@deals.each.with_index(1) do |deal, i|
       #    puts "#{i}. #{deal.name} - #{deal.price} - #{deal.availability}"
       end
-
+      puts #space line
       puts  "Enter the number of the match would you like to learn more information about."
 
       #in this section lets call a class that extracts match info
 
     end
+
     def schedule
         input =nil
         while input != "exit"
@@ -32,7 +37,7 @@ class Wru::CLI
                         the_match = @matches[input.to_i - 1] #this provides the array index of this match and then puts the object
                         puts <<-DOC.gsub /^\s*/, ''
                               Date = #{the_match.date}
-                              Time = #{the_match.time}
+                              Time = #{the_match.time} (local time of the home country)
                               Type of Match = #{the_match.comp}
                               #{the_match.home} (home) against #{the_match.away} (away)
                               Score = #{the_match.score}
@@ -43,10 +48,9 @@ class Wru::CLI
                         puts <<-DOC.gsub /^\s*/, ''
                                 There are #{@matches.count} matches in the schedule. Type the corresponding number from the list of upcoming matches to learn more.  If you would like to exit, type "exit" into the terminal.
                              DOC
-              elsif
-                list_matches
               else
-                puts "Not sure what you want, type list or exit."
+                puts "Not sure what you want, type or exit if you would like to stop the program."
+                list_matches
               end
         end
     end

@@ -56,12 +56,16 @@ class Wru::CLI
                              DOC
               elsif input == "list"
                   match_breakdown
+              elsif input.to_i <0
+                puts "Not sure what you were looking for with your last inquiry. Type the corresponding match number to learn more, type list to see the schedule again, or type exit if you would like to stop the program."
+                puts
+
               elsif input == "exit"
                 puts "Thanks for visiting. Go CYMRU!!"
               else
-                puts "Not sure what you want with your last input. Type the corresponding match number to learn more, type list to see the schedule again, or type exit if you would like to stop the program."
+                puts "Not sure what you were looking for with your last inquiry. Type the corresponding match number to learn more, type list to see the schedule again, or type exit if you would like to stop the program."
                 puts
-                match_breakdown
+
               end
         end
     end

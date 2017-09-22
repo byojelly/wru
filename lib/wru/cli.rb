@@ -49,7 +49,8 @@ class Wru::CLI
                                 There are #{@matches.count} matches in the schedule. Type the corresponding number from the list of upcoming matches to learn more.  If you would like to exit, type "exit" into the terminal.
                              DOC
               else
-                puts "Not sure what you want, type or exit if you would like to stop the program."
+                puts "Not sure what you want with your last input. Type the corresponding match number to learn more or type exit if you would like to stop the program."
+                puts
                 list_matches
               end
         end

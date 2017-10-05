@@ -1,7 +1,10 @@
 #this is our cli controller - responsible for user interactions in the bin folder daily--deal
-
+require 'pry'
 class Wru::CLI
     def call
+        Wru::Scraper.new.make_matches   #scraper
+        binding.pry
+        @matches = Wru::Match.matches
         greeting
         schedule
     end
@@ -15,7 +18,6 @@ class Wru::CLI
       list_matches
     end
     def list_matches
-      @matches = Wru::Schedule.new.make_matches
       match_breakdown
 
     end

@@ -10,5 +10,14 @@ require "wru"
 # require "pry"
 # Pry.start
 
+
 require "irb"
 IRB.start
+
+
+#belo was an attempt to setup a reload method so that in terminal i could just type reload after modifuing code. did not work. look up later
+
+#def reload! #this method lets us easily reload our terminal rather than exiting
+#  load "./lib/wru/cli.rb"
+#  load "./lib/wru/match.rb.rb"
+#end

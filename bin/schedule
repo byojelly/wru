@@ -1,10 +1,16 @@
 #!/usr/bin/env ruby
+#shebang
 #the above line of code is added because this file was not made as a ruby.rb file.  the above code lets the proceeding text be ready as Ruby
 
 require "bundler/setup"
-require "wru.rb"
+#require "/home/alex/code/labs/wru/lib/wru"
+require_relative "../lib/wru"
+#require & require_relative do the same thing in sligthly different ways
+#require starts from the home directory to search for the file needed (takes longer to load than require_relative)
+#require_relative is local, so you you need to go up one folder than down into the folder/file required
 #above sets up a load dependency which requires a specific file
 
-Wru::CLI.new.call
+cli = Wru::CLI.new
+cli.call
 
 #above this is assuming we have a CLI class written under DailyDeal, then operating the call method

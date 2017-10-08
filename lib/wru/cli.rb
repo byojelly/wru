@@ -3,7 +3,7 @@ require 'pry'
 class Wru::CLI
     def call
         Wru::Scraper.new.make_matches   #scraper
-        
+      #binding.pry was added in below after code review so that functionality of a class method matches_with(team) can be inserted   
         binding.pry
         @matches = Wru::Match.matches
         greeting

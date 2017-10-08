@@ -21,13 +21,6 @@ class Wru::Match
   def self.matches
     @@matches
   end
-
-  def self.matches_with(team)
-    #
-    #returns an array of all the match objects with the team passed in as an argument
-    "hello"
-    #when done, push to github, then send info to reviewer on slack slack id to cernanb
-  end
 end
 
 # =>      ./bin/console

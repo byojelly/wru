@@ -3,6 +3,7 @@ require 'pry'
 class Wru::CLI
     def call
         Wru::Scraper.new.make_matches   #scraper
+        
         binding.pry
         @matches = Wru::Match.matches
         greeting

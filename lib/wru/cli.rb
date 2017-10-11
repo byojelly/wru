@@ -1,13 +1,25 @@
+
+
 #this is our cli controller - responsible for user interactions in the bin folder daily--deal
 require 'pry'
 class Wru::CLI
     def call
         Wru::Scraper.new.make_matches   #scraper
-      #binding.pry was added in below after code review so that functionality of a class method matches_with(team) can be inserted   
+      #binding.pry was added in below after code review so that functionality of a class method matches_with(team) can be inserted
         binding.pry
         @matches = Wru::Match.matches
         greeting
         schedule
+    end
+
+    def matches_with_team
+      team = gets.strip
+      matches = Wru::Match.matches_with(team)
+      if matches.empty?
+        puts "Sorry, but it looks like the search term for the team you are looking for is not finding any matches against any upcoming games. If you think this is an error please check your spelling of the team or use a different search term."
+      else
+        #display all the info for the matches
+      end
     end
 
     def greeting

@@ -1,23 +1,26 @@
 
-## Installation
+A command line interface (CLI) that scrapes the Welsh Rugby Unions website for upcoming match information.
 
-Add this line to your application's Gemfile:
+Hello and welcome to the WRU app. This app give you the ability to scrape the Wales national rugby team's website for match information.
 
-```ruby
-gem 'wru'
-```
+In order to run this application you will need to do the following:
 
-And then execute:
+1) Fork this repository locally.
 
-    $ bundle
+2) Run bundle install in your terminal to download the gemfiles
 
-Or install it yourself as:
+3) Navigate to the wru directory in your terminal.
 
-    $ gem install wru!
+4) To activate the cli type "./bin/schedule" into your terminal and follow the directions from there
 
-## Usage
 
-This is a very simple gem. In your terminal, make sure you have accessed your wru folder through change directory (cd) in atom (which is use). To activate the cli type "./bin/schedule" into your terminal and follow the direction
+Enjoy!
+
+Sincerely,
+-Byojelly
+
+
+
 
 ## Development
 

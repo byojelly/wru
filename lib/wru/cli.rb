@@ -34,7 +34,7 @@ class Wru::CLI
 
 
     def schedule
-
+        #this is for user interaction
         input =nil
         while input != "exit"
               input = gets.strip.downcase #downcase allows any input to be processed in a similar manner

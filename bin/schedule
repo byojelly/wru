@@ -12,5 +12,6 @@ require_relative "../lib/wru"
 
 cli = Wru::CLI.new
 cli.call
+    #performs call method on CLI module
 
 #above this is assuming we have a CLI class written under DailyDeal, then operating the call method

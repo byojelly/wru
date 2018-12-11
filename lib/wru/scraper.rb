@@ -23,7 +23,7 @@ class Wru::Scraper
               match.score = event.css(".field_Score").text.delete(", ")
               match.away = event.css(".field_AwayDisplay").text
               match.venue = event.css(".field_VenName").text
-              #I am having a difficult time isolating the link url in match.more_info
+              #below I am having a difficult time isolating the link url in match.more_info
               match.more_info = event.css(".field_Links").text
 
         end

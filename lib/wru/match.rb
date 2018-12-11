@@ -1,6 +1,7 @@
 class Wru::Match
 
   attr_accessor :date, :time, :comp, :home, :score, :away, :venue, :more_info
+  #above creates attribute settings for each initialized class
   #lets keep track of a class array of all matches
   @@matches = [] #clas variable
 

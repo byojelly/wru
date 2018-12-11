@@ -10,6 +10,7 @@ You want to start your programming with a shell of what the cli should do (with 
 
 The Bin exeucatble file needs the below line of code so that the program knows to read the code as ruby
         #!/usr/bin/env ruby
+        this is located in wru/bin/console
 
 the bin folder should contain an executable file that the user essentially interracts with
 you can lookup the file permissions of the files in the folder by typing below into editor as long as the terminal is on that folder:
